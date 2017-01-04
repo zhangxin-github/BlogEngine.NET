@@ -792,6 +792,7 @@
     <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.woff" />
     <Content Include="Custom\Themes\Standard\src\fonts\fontawesome-webfont.woff2" />
     <Content Include="Custom\Themes\Standard\src\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\be.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1630,6 +1631,7 @@
     <Content Include="setup\MySQL\MySQLWeb.Config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -17,6 +17,9 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1830546973&debug=true" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="<%=Resources.labels.LangDirection %>">
     <form id="Form1" runat="server">
@@ -25,13 +28,62 @@
                 <a href="http://dotnetblogengine.net/" target="_blank">
                     <img alt="BlogEngine.NET" src="../Content/images/blog/logo.png" /></a>
             </div>
-             <div id="StatusBox">
-                    <div id="AdminStatus" runat="server" style="display: none"></div>
-                </div>
-            <div class="account-box">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <div id="StatusBox">
+                <div id="AdminStatus" runat="server" style="display: none"></div>
             </div>
+               
+            <a href="#" class="qrcode-target qrcode-target-show" id="qrcode-target" title="扫码登录"></a>
+            <div id="account-box" class="account-box">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                <div id="wb_connect_btn"></div>
+            </div>
+            <div id="qrcode-box" class="qrcode-box"></div>
         </div>
     </form>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#qrcode-target").click(function(){
+                $(this).toggleClass(function() {
+                    if ($(this).is(".qrcode-target-show")) {
+                        $(this).removeClass("qrcode-target-show");
+                        $("#account-box").hide();
+                        $("#qrcode-box").show();
+                        var obj = new WxLogin({
+                            id: "qrcode-box",
+                            appid: "wxbdc5610cc59c1631",
+                            scope: "snsapi_login",
+                            redirect_uri: "https%3A%2F%2Fpassport.yhd.com%2Fwechat%2Fcallback.do",
+                            state: "nobind",
+                            style: "white",
+                            href: ""
+                        });
+                        return "qrcode-target-hide";
+                    } else {
+                        $(this).removeClass("qrcode-target-hide");
+                        $("#account-box").show();
+                        $("#qrcode-box").hide();
+                        return "qrcode-target-show";
+                    }
+                });
+            });
+
+            WB2.anyWhere(function (W) {
+                W.widget.connectButton({
+                    id: "wb_connect_btn",
+                    type: '3,2',
+                    callback: {
+                        login: function (o) { //登录后的回调函数
+                            debugger;
+                            alert("login: " + o.screen_name)
+                        },
+                        logout: function () { //退出后的回调函数
+                            alert('logout');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

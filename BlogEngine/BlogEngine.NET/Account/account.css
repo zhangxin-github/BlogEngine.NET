@@ -57,13 +57,13 @@ figcaption { text-align: center; font-size: 0.75rem; }
 *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .text-center { text-align: center; }
 h1 { font-size: 18px; margin: 0; }
-.account { padding-top: 5%; width: 360px; max-width: 100%; margin: 0 auto 50px; }
+.account { padding-top: 5%; width: 360px; max-width: 100%; margin: 0 auto 50px; position: relative; }
 label { text-transform: capitalize; }
 .account hr { border: none; height: 1px; background: #ddd; margin: 0; }
 .account-box { background-color: #fff; -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.1); -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.1); box-shadow: 0px 0px 5px rgba(0,0,0,.1); -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; overflow: hidden; }
 .account-body { padding: 30px; }
-.account-title { padding: 0 30px; line-height: 62px; height: 60px; background-color: #f9f9f9; border-bottom: 1px solid #eee; font-weight: 400; color: #666; text-transform: uppercase; position: relative; }
-.account-title span { display: block; font-weight:500; }
+.account-title { padding-left: 30px; line-height: 62px; height: 60px; background-color: #f9f9f9; border-bottom: 1px solid #eee; font-weight: 400; color: #666; text-transform: uppercase; position: relative; }
+.account-title span { display: block; font-weight:500; float:left; }
 .account-header { margin-bottom: 40px; }
 .warning { background-color: #ea5a5a; color: #fff; padding: 10px 10px 10px 30px; margin-bottom: 10px; }
 .warning a { color: #fff; }
@@ -88,4 +88,34 @@ table { width: 100%; }
     .account-box { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
     .account-header { display: none; }
     .warning { margin: 0; }
+}
+
+/* 扫码登录 */
+.qrcode-box {
+    text-align: center; 
+    background-color: #333333;
+}
+.qrcode-target-show {
+    background-position: -201px -199px;
+}
+.qrcode-target-hide {
+    background-position: -260px -260px;
+}
+.qrcode-target {
+    position: absolute;
+    /*float: right;*/
+    width: 60px;
+    height: 60px;
+    display: block;
+    /*top: 0;*/
+    right: 0;
+    _right: 1px;
+    background-image: url(https://t.alipayobjects.com/images/rmsweb/T1el0hXaJbXXXXXXXX.png);
+    _background-image: url(https://i.alipayobjects.com/e/201311/1Yc1UNOrYL.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 101;
+    -webkit-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+    -moz-transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
+    transition: background-position .2s cubic-bezier(0.25,.5,.5,.9);
 }
