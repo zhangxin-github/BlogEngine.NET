@@ -640,7 +640,7 @@
                 else
                 {
                     phAddComment.Visible = false;
-                    lbCommentsDisabled.Visible = true;
+                    lbCommentsDisabled.Visible = false; //设置关闭评论标签不可见
                 }
             }
 
