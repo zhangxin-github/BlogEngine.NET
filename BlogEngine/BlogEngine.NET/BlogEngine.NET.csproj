@@ -577,6 +577,7 @@
     <Content Include="Custom\Themes\Standard\src\img\logo.png" />
     <Content Include="Custom\Themes\Standard\src\js\bootstrap.min.js" />
     <Content Include="Custom\Themes\Standard\src\js\custom.js" />
+    <Content Include="Custom\Themes\Standard\src\js\ishare.js" />
     <Content Include="Custom\Themes\Standard\theme.png" />
     <Content Include="Custom\Themes\Standard\theme.xml" />
     <Content Include="Custom\Themes\Standard\WidgetContainer.ascx" />
@@ -2471,7 +2472,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64079</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
