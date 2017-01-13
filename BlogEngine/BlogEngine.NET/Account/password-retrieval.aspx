@@ -3,7 +3,8 @@
 <%@ MasterType VirtualPath="~/Account/account.master" %>
 <%@ Import Namespace="BlogEngine.Core" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">    
+    <link href="//at.alicdn.com/t/font_1jnh0x19osdu0udi.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
 
@@ -21,5 +22,9 @@
                 $("input[name$='txtUser']").focus();
             });
         </script>
+
+        <div class="small-link ">
+            <a class="return" href="<%=Utils.RelativeWebRoot %>Account/login.aspx?ReturnURL=<%=Utils.RelativeWebRoot %>admin/"><i class="iconfont icon-back"></i>返回登录</a>
+        </div>
     </div>
 </asp:Content>
